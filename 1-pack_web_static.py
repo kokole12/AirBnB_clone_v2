@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """ setting up to generate a .tgz fiel"""
 from fabric.api import local
 from time import strftime
@@ -19,10 +18,3 @@ def do_pack():
 
     except Exception as e:
         return None
-=======
-""" python fabric script to generate a .tgz file"""
-
-
-def do_pack():
-    pass
->>>>>>> 23670310a5f51324f483d669bef0f1f6fa3bb7f2

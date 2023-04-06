@@ -2,16 +2,15 @@
 """ setting up to generate a .tgz fiel"""
 from fabric.api import local
 from time import strftime
-import time
 
 
 def do_pack():
-    """ A script that generates archive the contents of web_static folder"""
-
+    """setting up the local directory """
     try:
-	local('mkdir -p versions')
-	local('tar -cvzf versions/web_static_{}.tgz web_static/'.format(
-	      time.strftime("%Y%m%d%H%M%S")))
-	return ('versions/web_static_{}.tgz'.format(time.strftime('%Y%m%d%H%M%S')))
-    except:
-	return None
+        local('mkdir -p versions')
+        date = strftime("%Y%m%d%H%M%S")
+        """ creating the file"""
+        local("tar -cvzf versions/web_static_{}.tgz web_static/".format(date))
+        return ('versions/web_static_{}.tgz'.format(date))
+    except Exception as e:
+        return None

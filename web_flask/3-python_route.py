@@ -17,7 +17,7 @@ def hello_hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_isfun(text):
-	return ('C {}'.format(escape(text.replace("_", " ")))
+	return ('C {}'.format(escape(text.replace("_", " "))))
 
 
 @app.route('/python', strict_slashes=False)

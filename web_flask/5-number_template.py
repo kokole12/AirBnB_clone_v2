@@ -27,14 +27,11 @@ def python(text='is_cool'):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-<<<<<<< HEAD
 	return ('{} is a number'.format(n))
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_html(n):
-=======
->>>>>>> ef12016550fb0428ce9ebc0946d7c5640144a71d
 	return render_template("5-number.html", n=n)
 
 

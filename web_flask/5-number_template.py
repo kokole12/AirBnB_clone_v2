@@ -27,7 +27,7 @@ def python(text='is_cool'):
 
 @app.route('/number/<int:n>')
 def number(n):
-	return render_template('5-number.html', n=n)
+	return render_template("5-number.html", n=n)
 
 
 if __name__ == "__main__":

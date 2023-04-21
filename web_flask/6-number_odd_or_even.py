@@ -4,6 +4,7 @@
 	template file
 """
 
+
 from flask import Flask, escape, render_template
 app = Flask(__name__)
 

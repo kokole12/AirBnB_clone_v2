@@ -6,17 +6,19 @@
 from flask import Flask, render_template, g
 from models import storage
 from models.state import State
+
+
 app = Flask(__name__)
 
 
-@app.route('/state_list', strict_slashes=False)
+@app.route("/state_list", strict_slashes=False)
 def state_list(states):
-    states = storage.all(State)
+    states = storage.all()
     return render_template(states=states)
 
 
 @app.teardown_appcontext
-def teardown_db(self):
+def teardowndb(self):
     storage.close()
 
 

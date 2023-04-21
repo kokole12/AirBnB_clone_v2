@@ -1,4 +1,4 @@
-#!/uar/bin/python3
+#!/usr/bin/python3
 """
     Python flask web app script to display
     the states and the cities

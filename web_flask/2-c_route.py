@@ -20,7 +20,7 @@ def home_hbnb():
 
 @app.route('/c/<text>')
 def c_isfun(text):
-    return ('C {}'.format(escape(text)))
+    return ('C {}'.format(escape(text.replace("_", " "))))
 
 
 if __name__ == '__main__':

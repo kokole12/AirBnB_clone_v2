@@ -20,4 +20,5 @@ def states():
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_by_id(id):
+    """TO DO implement the """
     pass

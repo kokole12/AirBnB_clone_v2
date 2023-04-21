@@ -28,6 +28,7 @@ def c_isfun(text):
 def python(text='is_cool'):
 	return ('Python {}'.format(escape(text.replace("_", " "))))
 
+
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
 	return ('{} is a number'.format(n))

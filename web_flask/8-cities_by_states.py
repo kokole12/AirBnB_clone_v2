@@ -20,7 +20,8 @@ def cities_by_state():
 
 
 @app.teardown_appcontext
-def teardowndb(self):
+def teardown(self):
+    """ Performing the database teardown"""
     storage.close()
 
 

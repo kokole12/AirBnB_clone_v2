@@ -20,4 +20,13 @@ def states():
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_by_id(id):
-    pass
+    for state in storage.all(State).values():
+        if state.id == id:
+            return render_template("9-states.html", query_with='id')
+        return render_template("9-states.html", query_with=None)
+
+
+@app.teardown_appcontext
+def teardown_db(self):
+    """ database teardown"""
+    storage.close()

@@ -8,14 +8,14 @@
 </head>
 <body>
     <H1>States</H1>
-    <UL> {% for state in states.values() | sort(attribute='name')%}
+    <UL> {% for state in states.values() | sort(attribute='name') %}
         <LI>{{state.id}}: <B>{{state.name}}</B>
-            <UL> {% for city in states.cites | sort(attribute='name')%}
+            <UL> {% for city in states.cites | sort(attribute='name') %}
                 <LI> {{city.id}}: <B> {{city.name}} </B></LI>
-                {% endfor%}
+                {% endfor %}
             </UL> 
         </LI>
-        {% endfor%}
+        {% endfor %}
     </UL>
 </body>
 </html>

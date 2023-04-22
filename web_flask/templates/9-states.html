@@ -7,7 +7,7 @@
     <TITLE>HBNB</TITLE>
 </head>
 <body>
-    {% if query_width == 'all' %}
+    {% if query_with == 'all' %}
         <H1>States</H1>
         <UL> {% for state in states.values() | sort(attribute='name') %}
             <LI> {{state.id}}: <B>{{state.name}}</B></LI>

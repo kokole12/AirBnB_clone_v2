@@ -17,7 +17,7 @@
         <section class="filters">
             <div class="locations">
               <h3>States</h3>
-                  <h4>&nbsp;</h4>
+                  &nbsp;
                   <ul class="popover">
                     {% for state in states | sort(attribute='name')%}
                     <li> 
@@ -32,7 +32,7 @@
                 </div>
                 <div class="amenities">
                   <h3>Amenities</h3>
-                  <h4>&nbsp;</h4>
+                  &nbsp;
                   <ul class="popover">
                     {% for amentity in amenities | sort(attribute='name')%}
                     <li> {{amentity.name}}</li>

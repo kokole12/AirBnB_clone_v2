@@ -50,37 +50,40 @@
       </section>
       <section class="places">
 	<h1>Places</h1>
+        {% for place in places | sort(attribute='name')%}
         <article>
-          <h2>#Beautiful Studio in Waikiki</h2>
+          <h2>{{place.name}}</h2>
           <div class="price_by_night">$119</div>
           <div class="information">
-            <div class="max_guest">2 guests</div>
-            <div class="number_rooms">0 bedroom</div>
-            <div class="number_bathrooms">1 bathroom</div>
+            <div class="max_guest">{{place.max_guests}} Guests</div>
+            <div class="number_rooms">{{place.number_rooms}} Rooms</div>
+            <div class="number_bathrooms">{{ place.number_bathrooms}} bathroom</div>
           </div>
-          <div class="user"><strong>Owner:</strong> Longye Chen</div>
-          <div class="description">This is a lovely 1 bedroom and 1 bathroom apartment that can accomodate 2 people. It is located at the center of Shanghai and next to subway line 1, 1 stop to People Square, 2 stops to Bund, and 3 stops to Jingan Temple.</div>
-	</article>
-        <article><h2>Tiny house</h2>
-          <div class="price_by_night">$119</div>
-          <div class="information">
-            <div class="max_guest">1 guest</div>
-            <div class="number_rooms">1 bedroom</div>
-            <div class="number_bathrooms">1 bathroom</div>
+          <div class="user">
+            <strong>Owner:</strong> {{place.user.first_name}} {{place.user.last_name}}
           </div>
-          <div class="user"><strong>Owner:</strong> Mel X</div>
-          <div class="description">This is a tiny, tight, and cozy getaway. Affordable and not too shabby. Perfect for those on a budget.</div>
-        </article>
-        <article><h2>A suite</h2>
-          <div class="price_by_night">$160</div>
-          <div class="information">
-            <div class="max_guest">2 guests</div>
-            <div class="number_rooms">1 bedroom</div>
-            <div class="number_bathrooms">2 bathrooms</div>
-          </div>
-          <div class="user"><strong>Owner:</strong> Christina Chiu</div>
-          <div class="description">Beautiful suite with balcony worthy of Romeo and Juliet's love story.</div>
-        </article>
+          <div class="description">{{place.user.description}}</div>
+
+          <div class="amenities">
+              <h1>Amenities</h1>
+              {% for amenity in place.amenities|sort(attribute="name") %}
+              <ul>
+                <li><p>{{ amenity.name }}</p></li>
+              </ul>
+              {% endfor %}
+            </div>
+
+            <div class="reviews">
+              <h2>{{ place.reviews.__len__() }} Reviews</h2>
+              {% for review in place.reviews %}
+              <h3>From {{ review.user.first_name }} the {{ review.created_at.date().__str__() }}</h3>
+              <ul>
+                <li><p>{{ review.text|safe }}</p></li>
+              </ul>
+            {% endfor %}
+            </div>
+	      </article>
+        {%endfor%}
       </section>
     </div>
     <footer>
